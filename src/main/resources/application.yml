@@ -1,0 +1,21 @@
+server:
+  port: 8053
+
+spring:
+  application:
+    name: boleto-batch
+  kafka:
+    producer:
+      topics:
+        geracao-boleto-pdf: GERACAO_BOLETO_PDF
+  batch:
+    jdbc:
+      initialize-schema: ALWAYS
+    job:
+      enabled: true
+batch:
+  chunkSize: 5000
+
+jdbc.postgres:
+  pageSize: 10
+  fetchSize: 10
